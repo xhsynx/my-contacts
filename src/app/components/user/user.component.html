@@ -1,69 +1,100 @@
-<nav class="navbar navbar-expand-lg navbar-light uk-padding-bottom-remove ">
-  <a class="nav-tabs mr-3 " href="#">Navbar</a>
-  <a class="nav-tabs " href="#">Navbar</a>
-
-  <div
-    class="collapse navbar-collapse align-self-center"
-    id="navbarSupportedContent"
-  >
-    <form class="form-inline my-2 my-lg-0 ml-auto">
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-    </form>
-  </div>
-</nav>
-
 <!-- contacts card -->
-<div class="card card-img-bottom" id="card_contacts">
+<div class="pt-5 mt-5 pb-5 mb-5 bg-content">
   <div id="contacts" aria-expanded="true">
-    <ul class="list-group pull-down" id="contact-list">
-      <li class="list-group-item" *ngFor="let user of users">
-        <div class="row w-100">
-          <div class="col-12 col-sm-6  col-md-3 px-0">
+    <ul class="list-group d-block" id="contact-list">
+      <li
+        class="list-group-flush p-1 rounded bg-li m-1"
+        *ngFor="let user of users"
+      >
+        <div class="row">
+          <div class="col-2 d-flex align-items-center">
             <img
               src="{{ user.avatar }}"
               alt="Mike Anamendolla"
-              class="rounded-circle"
+              class="rounded-circle align-content-center h-25 d-inline-block"
             />
           </div>
-          <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-            <span
-              class="fa fa-mobile fa-2x text-success float-right pulse"
-              title="online now"
-            ></span>
-            <label class="name lead"
-              >{{ user.name }}&nbsp;{{ user.surname }}</label
-            >
-            <br />
-            <span
-              class="fa fa-map-marker fa-fw text-muted"
-              data-toggle="tooltip"
-              title=""
-              data-original-title="5842 Hillcrest Rd"
-            ></span>
-            <span class="text-muted">5842 Hillcrest Rd</span>
-            <br />
-            <span
-              class="fa fa-phone fa-fw text-muted"
-              data-toggle="tooltip"
-              title=""
-              data-original-title="(870) 288-4149"
-            ></span>
-            <span class="text-muted small">(870) 288-4149</span>
-            <br />
-            <span
-              class="fa fa-envelope fa-fw text-muted"
-              data-toggle="tooltip"
-              data-original-title=""
-              title=""
-            ></span>
-            <span class="text-muted small text-truncate"
-              >mike.ana@example.com</span
-            >
+          <div class="col-8 d-flex justify-content-center align-items-center">
+            <div>
+              <fa-icon
+                [icon]="faUser"
+                size="sm"
+                style="color:#cddc39;padding: 10px;"
+              ></fa-icon>
+              <label class="name lead text-warning"
+                >{{ user.name }}&nbsp;{{ user.surname }}</label
+              >
+              <br />
+              <fa-icon
+                [icon]="faMapMarkerAlt"
+                size="sm"
+                style="color:#cddc39;padding: 10px;"
+              ></fa-icon>
+              <span class="text-warning">5842 Hillcrest Rd</span>
+              <br />
+              <fa-icon
+                [icon]="faPhoneAlt"
+                size="sm"
+                style="color:#cddc39;padding: 10px;"
+              ></fa-icon>
+              <span class=" small text-warning">(870) 288-4149</span>
+              <br />
+              <fa-icon
+                [icon]="faEnvelope"
+                size="sm"
+                style="color:#cddc39;padding: 10px;"
+              ></fa-icon>
+              <span class=" small text-truncate text-warning"
+                >mike.ana@example.com</span
+              >
+            </div>
+          </div>
+          <div class="col-2 d-flex justify-content-around align-items-center">
+            <div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Edit"
+              >
+                <fa-icon
+                  [icon]="faPen"
+                  size="sm"
+                  style="color:#cddc39;"
+                ></fa-icon>
+              </button>
+              <br />
+              <br />
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Share"
+              >
+                <fa-icon
+                  [icon]="faShareAlt"
+                  size="sm"
+                  style="color:#cddc39;"
+                ></fa-icon>
+              </button>
+              <br />
+              <br />
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Delete"
+              >
+                <fa-icon
+                  [icon]="faTrash"
+                  size="sm"
+                  style="color:#cddc39;"
+                ></fa-icon>
+              </button>
+            </div>
           </div>
         </div>
       </li>
