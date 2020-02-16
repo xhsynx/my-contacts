@@ -4,12 +4,10 @@ import { UsersService } from "src/app/services/users.service";
 import {
   faShareAlt,
   faTrash,
-  faEdit,
   faUser,
   faMapMarkerAlt,
   faPhoneAlt,
-  faEnvelope,
-  faPen
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -21,7 +19,6 @@ export class UserComponent implements OnInit {
   users: User[];
   faShareAlt = faShareAlt;
   faTrash = faTrash;
-  faPen = faPen;
   faUser = faUser;
   faMapMarkerAlt = faMapMarkerAlt;
   faPhoneAlt = faPhoneAlt;

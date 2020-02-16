@@ -1,30 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
-import {
-  faShareAlt,
-  faTrash,
-  faEdit,
-  faUser,
-  faMapMarkerAlt,
-  faPhoneAlt,
-  faEnvelope,
-  faPen
-} from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
-  selector: "app-update-user",
-  templateUrl: "./update-user.component.html",
-  styleUrls: ["./update-user.component.scss"]
+  selector: "app-delete-user",
+  templateUrl: "./delete-user.component.html",
+  styleUrls: ["./delete-user.component.scss"]
 })
-export class UpdateUserComponent implements OnInit {
+export class DeleteUserComponent implements OnInit {
   closeResult: string;
-  faShareAlt = faShareAlt;
   faTrash = faTrash;
-  faPen = faPen;
-  faUser = faUser;
-  faMapMarkerAlt = faMapMarkerAlt;
-  faPhoneAlt = faPhoneAlt;
-  faEnvelope = faEnvelope;
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {}

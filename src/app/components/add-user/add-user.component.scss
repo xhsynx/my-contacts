@@ -1,4 +1,4 @@
-.bg-content {
+.bg-modal-content-color {
   background-image: linear-gradient(
     to bottom,
     #051937,
@@ -8,6 +8,10 @@
     #e31922
   );
 }
-.bg-li {
-  background-color: #051937;
+
+.bg-modal-footer {
+  background-color: #ec407a;
+}
+.bg-modal-title-color {
+  color: #ec407a;
 }

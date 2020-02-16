@@ -10,18 +10,26 @@ import { NavbarComponent } from "./components/custom-components/navbar/navbar.co
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { UpdateUserComponent } from "./components/update-user/update-user.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { DeleteUserComponent } from "./components/delete-user/delete-user.component";
+import { AddUserComponent } from "./components/add-user/add-user.component";
+import { ShareUserComponent } from "./components/share-user/share-user.component";
+import { FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
     FeedComponent,
     UserComponent,
     NavbarComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    DeleteUserComponent,
+    AddUserComponent,
+    ShareUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     FontAwesomeModule,
     NgbModule
   ],
