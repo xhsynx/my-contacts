@@ -28,7 +28,7 @@
     <ul class="list-group d-block" id="contact-list">
       <li
         class="list-group-flush p-1 rounded bg-li m-1"
-        *ngFor="let user of users | filter: searchTerm"
+        *ngFor="let user of users | filter: searchTerm; let i = index"
       >
         <app-user [user]="user"></app-user>
       </li>

@@ -11,8 +11,7 @@ export class NavbarComponent implements OnInit {
   users: User[];
   faUserPlus = faUserPlus;
   faMobileAlt = faMobileAlt;
-  searchTerm: string;
-  @Input() user: User;
+  searchTerm?: string;
   constructor(private userService: UsersService) {}
 
   ngOnInit(): void {

@@ -767,4 +767,7 @@ export class UsersService {
   get() {
     return of(this.Users);
   }
+  remove(id: number) {
+    return this.Users.splice(id, 1);
+  }
 }
