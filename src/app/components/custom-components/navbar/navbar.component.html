@@ -1,27 +1,42 @@
-<nav class="navbar fixed-top bg-nav">
-  <a style="color:#ec407a;">
-    <fa-icon
-      [icon]="faMobileAlt"
-      size="3x"
-      style="color:#ec407a;padding-right: 10px;"
-    ></fa-icon>
-    <span style="font-weight:bold">S</span>mart
-    <span style="font-weight:bold">C</span>ontact
-  </a>
+<div class="bg-content">
+  <nav class="navbar fixed-top bg-nav p-2">
+    <a style="color:#e31922;">
+      <fa-icon
+        [icon]="faMobileAlt"
+        size="2x"
+        style="color:#e31922;"
+        class="p-2"
+      ></fa-icon>
+      <span style="font-weight:bold;font-size: x-large;">S</span><i>mart</i>
+      <span style="font-weight:bold;font-size: x-large;padding-left: 5px;"
+        >C</span
+      ><i>ontact</i>
+    </a>
 
-  <div class="form-inline">
-    <input
-      style="background-color:#f48fb1;"
-      class="form-control mr-sm-2"
-      type="search"
-      placeholder="Search"
-      aria-label="Search"
-    />
+    <div class="form-inline">
+      <input
+        style="background-color:#f48fb1;"
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchTerm"
+      />
+    </div>
+  </nav>
+  <div class="p-5 pt-5 mb-5">
+    <ul class="list-group d-block" id="contact-list">
+      <li
+        class="list-group-flush p-1 rounded bg-li m-1"
+        *ngFor="let user of users | filter: searchTerm"
+      >
+        <app-user [user]="user"></app-user>
+      </li>
+    </ul>
   </div>
-</nav>
-
-<nav
-  class="navbar fixed-bottom bg-tab d-flex justify-content-center align-items-center"
->
-  <app-add-user></app-add-user>
-</nav>
+  <nav
+    class="navbar fixed-bottom bg-tab d-flex justify-content-center align-items-center"
+  >
+    <app-add-user></app-add-user>
+  </nav>
+</div>

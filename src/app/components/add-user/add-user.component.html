@@ -4,8 +4,8 @@
       <fa-icon
         [icon]="faUserPlus"
         size="2x"
-        style="color:#ec407a;"
-        class="p-2"
+        style="color:#e31922;"
+        class="p-0"
       ></fa-icon>
       Add New Contact!
     </h4>
@@ -16,16 +16,8 @@
         <input
           id="username"
           class="form-control"
-          placeholder="Username"
+          placeholder="Name"
           [(ngModel)]="username"
-        />
-      </div>
-      <div class="input-group p-1">
-        <input
-          id="address"
-          class="form-control"
-          [(ngModel)]="address"
-          placeholder="Address"
         />
       </div>
       <div class="input-group p-1">
@@ -72,5 +64,5 @@
   data-placement="right"
   title="Add New User"
 >
-  <fa-icon [icon]="faUserPlus" size="3x" style="color:#ec407a;"></fa-icon>
+  <fa-icon [icon]="faUserPlus" size="2x" style="color:#e31922;"></fa-icon>
 </button>

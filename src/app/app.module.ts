@@ -14,6 +14,8 @@ import { DeleteUserComponent } from "./components/delete-user/delete-user.compon
 import { AddUserComponent } from "./components/add-user/add-user.component";
 import { ShareUserComponent } from "./components/share-user/share-user.component";
 import { FormsModule } from "@angular/forms";
+import { FilterPipe } from './pipes/filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { FormsModule } from "@angular/forms";
     UpdateUserComponent,
     DeleteUserComponent,
     AddUserComponent,
-    ShareUserComponent
+    ShareUserComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,44 +1,56 @@
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Update User</h4>
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    >
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <div class="modal-header rounded-0" style="background-color: #051937;">
+    <h4 class="modal-title bg-modal-title-color" id="modal-basic-title">
+      <fa-icon
+        [icon]="faUser"
+        size="2x"
+        style="color:#e31922;"
+        class="p-2"
+      ></fa-icon>
+      Update User!
+    </h4>
   </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input
-            id="dateOfBirth"
-            class="form-control"
-            placeholder="yyyy-mm-dd"
-            name="dp"
-            ngbDatepicker
-            #dp="ngbDatepicker"
-          />
-          <div class="input-group-append">
-            <button
-              class="btn btn-outline-secondary calendar"
-              (click)="dp.toggle()"
-              type="button"
-            ></button>
-          </div>
-        </div>
+  <div class="modal-body bg-modal-content-color">
+    <div class="form-group">
+      <div class="input-group p-1">
+        <input
+          id="name"
+          class="form-control"
+          placeholder="{{ user.name }}"
+          [(ngModel)]="name"
+        />
       </div>
-    </form>
+      <div class="input-group p-1">
+        <input
+          id="phone"
+          class="form-control"
+          [(ngModel)]="phone"
+          placeholder="{{ user.phone }}"
+        />
+      </div>
+      <div class="input-group p-1">
+        <input
+          id="phone"
+          class="form-control"
+          [(ngModel)]="email"
+          placeholder="{{ user.email }}"
+        />
+      </div>
+    </div>
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer bg-modal-footer">
     <button
       type="button"
-      class="btn btn-outline-dark"
-      (click)="modal.close('Save click')"
+      class="btn btn-light"
+      aria-label="Close"
+      (click)="modal.dismiss()"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="save(); modal.close()"
     >
       Save
     </button>
@@ -47,10 +59,10 @@
 <button
   (click)="open(content)"
   type="button"
-  class="btn btn-secondary m-1"
+  class="btn btn-outline-success m-1"
   data-toggle="tooltip"
   data-placement="right"
-  title="Edit"
+  title="Update User"
 >
-  <fa-icon [icon]="faPen" size="sm" style="color:#cddc39;"></fa-icon>
+  <fa-icon [icon]="faPen" size="sm" style="color:#e31922;"></fa-icon>
 </button>

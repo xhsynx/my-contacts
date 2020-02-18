@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { User } from "src/app/model/user";
 import { UsersService } from "src/app/services/users.service";
 import {
@@ -16,19 +16,14 @@ import {
   styleUrls: ["./user.component.scss"]
 })
 export class UserComponent implements OnInit {
-  users: User[];
   faShareAlt = faShareAlt;
   faTrash = faTrash;
   faUser = faUser;
   faMapMarkerAlt = faMapMarkerAlt;
   faPhoneAlt = faPhoneAlt;
   faEnvelope = faEnvelope;
-  constructor(private userService: UsersService) {}
+  @Input() user: User;
+  constructor() {}
 
-  ngOnInit(): void {
-    console.log("ok");
-    this.userService.get().subscribe(res => {
-      this.users = res;
-    });
-  }
+  ngOnInit(): void {}
 }
