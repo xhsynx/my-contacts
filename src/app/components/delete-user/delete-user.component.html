@@ -1,18 +1,20 @@
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Delete User!</h4>
+  <div class="modal-header" style="background-color: #051937;">
+    <h4 class="modal-title" style="color: #e31922;" id="modal-basic-title">
+      Delete User!
+    </h4>
   </div>
-  <div class="modal-body">
+  <div class="modal-body bg-content">
     <form>
       <div class="form-group">
-        <label>Contact will be deleted...</label>
+        <label style="color:white;">Contact will be deleted...</label>
       </div>
     </form>
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer" style="background-color: #ec407a;">
     <button
       type="button"
-      class="btn btn-outline-info"
+      class="btn btn-light"
       (click)="modal.close('Save click')"
     >
       Cancel
