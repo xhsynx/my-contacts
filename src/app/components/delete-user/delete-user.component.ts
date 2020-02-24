@@ -23,7 +23,7 @@ export class DeleteUserComponent implements OnInit {
     this.modalService
       .open(content, { ariaLabelledBy: "modal-basic-title" })
       .result.then(() => {
-        this.userService.remove(this.user.id - 1);
+        this.userService.remove(this.user.id);
       });
   }
 }

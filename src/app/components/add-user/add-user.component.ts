@@ -7,6 +7,8 @@ import {
   faPhoneAlt,
   faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
+import { UsersService } from 'src/app/services/users.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: "app-add-user",
@@ -14,26 +16,23 @@ import {
   styleUrls: ["./add-user.component.scss"]
 })
 export class AddUserComponent implements OnInit {
-  username: string;
-  address: string;
-  phone: string;
-  email: string;
+
+  user: User =new User();
+
   faUser = faUser;
   faUserPlus = faUserPlus;
   faMapMarkerAlt = faMapMarkerAlt;
   faPhoneAlt = faPhoneAlt;
   faEnvelope = faEnvelope;
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal,private userService:UsersService) {  }
 
   ngOnInit(): void {}
 
   open(content: any) {
-    this.modalService.open(content);
+    this.modalService.open(content).result.then(()=>{
+      this.user.avatar="https://robohash.org/autaperiamest.png?size=100x100&set=set1";
+      this.userService.add(this.user);
+    });
   }
-  save() {
-    console.log(this.username);
-    console.log(this.address);
-    console.log(this.email);
-    console.log(this.phone);
-  }
+
 }
