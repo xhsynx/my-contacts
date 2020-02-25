@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { of } from "rxjs";
 import { User } from "../model/user";
+import { AngularFirestore } from "@angular/fire/firestore";
 @Injectable({
   providedIn: "root"
 })
@@ -41,16 +42,15 @@ export class UsersService {
   get() {
     return of(this.Users);
   }
-  add(user:User) {
+  add(user: User) {
     return of(this.Users.push(user));
   }
   remove(id: number) {
-
-    for( var i = 0; i < this.Users.length; i++){ 
-      if ( this.Users[i].id === id) {
-        this.Users.splice(i, 1); 
+    for (var i = 0; i < this.Users.length; i++) {
+      if (this.Users[i].id === id) {
+        this.Users.splice(i, 1);
       }
-   }
+    }
     return this.Users;
   }
 }

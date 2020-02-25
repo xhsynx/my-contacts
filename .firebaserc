@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "socialape-a84d2": {
+      "hosting": {
+        "my-contacts": [
+          "socialape-a84d2"
+        ]
+      }
+    }
+  }
+}

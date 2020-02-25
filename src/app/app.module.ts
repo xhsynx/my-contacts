@@ -14,8 +14,10 @@ import { DeleteUserComponent } from "./components/delete-user/delete-user.compon
 import { AddUserComponent } from "./components/add-user/add-user.component";
 import { ShareUserComponent } from "./components/share-user/share-user.component";
 import { FormsModule } from "@angular/forms";
-import { FilterPipe } from './pipes/filter.pipe';
-
+import { FilterPipe } from "./pipes/filter.pipe";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     BrowserAnimationsModule,
     FormsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

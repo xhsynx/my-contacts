@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { faUserPlus, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { User } from "src/app/model/user";
-import { UsersService } from "src/app/services/users.service";
+import { FirebaseService } from "src/app/services/firebase.service";
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
@@ -12,11 +12,11 @@ export class NavbarComponent implements OnInit {
   faUserPlus = faUserPlus;
   faMobileAlt = faMobileAlt;
   searchTerm?: string;
-  constructor(private userService: UsersService) {}
+  constructor(private firebaseService: FirebaseService) {}
 
   ngOnInit(): void {
-    this.userService.get().subscribe(res => {
-      this.users = res;
+    this.firebaseService.get().subscribe(users => {
+      this.users = users;
     });
   }
 }
