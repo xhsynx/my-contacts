@@ -10,6 +10,7 @@ import {
   faPen
 } from "@fortawesome/free-solid-svg-icons";
 import { User } from "src/app/model/user";
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: "app-update-user",
@@ -17,9 +18,8 @@ import { User } from "src/app/model/user";
   styleUrls: ["./update-user.component.scss"]
 })
 export class UpdateUserComponent implements OnInit {
-  name: string;
-  phone: string;
-  email: string;
+
+  updatedUser: User = new User();
   closeResult: string;
   faShareAlt = faShareAlt;
   faTrash = faTrash;
@@ -29,30 +29,21 @@ export class UpdateUserComponent implements OnInit {
   faPhoneAlt = faPhoneAlt;
   faEnvelope = faEnvelope;
   @Input() user: User;
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private firebaseService:FirebaseService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
   open(content: any) {
     this.modalService
       .open(content, { ariaLabelledBy: "modal-basic-title" })
-      .result.then(
-        result => {
-          this.closeResult = `Closed with: ${result}`;
+      .result.then(() => {
+       this.firebaseService.update(this.user,this.updatedUser);
+
         },
-        reason => {
-          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        () => {
+         console.log("Update cancelled.")
         }
       );
   }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return "by pressing ESC";
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return "by clicking on a backdrop";
-    } else {
-      console.log(this.user);
-    }
-  }
-  save() {}
 }

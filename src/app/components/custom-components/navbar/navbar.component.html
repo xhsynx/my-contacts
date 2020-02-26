@@ -1,4 +1,4 @@
-<div class="bg-content">
+<div >
   <nav class="navbar fixed-top bg-nav p-2">
     <a style="color:#e31922;">
       <fa-icon
@@ -28,9 +28,9 @@
     <ul class="list-group d-block" id="contact-list">
       <li
         class="list-group-flush p-1 rounded bg-li m-1"
-        *ngFor="let user of users | filter: searchTerm; let i = index"
+        *ngFor="let user of users | filter: searchTerm"
       >
-        <app-user [user]="user"></app-user>
+        <app-user [user]="user" [attr.id]="user.id"></app-user>
       </li>
     </ul>
   </div>

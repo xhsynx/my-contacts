@@ -28,7 +28,9 @@ export class AddUserComponent implements OnInit {
     private firebaseService: FirebaseService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.firebaseService.get();
+  }
 
   open(content: any) {
     this.modalService.open(content).result.then(
@@ -36,6 +38,8 @@ export class AddUserComponent implements OnInit {
         this.user.avatar =
           "https://robohash.org/autaperiamest.png?size=100x100&set=set1";
         this.firebaseService.add(this.user);
+        this.ngOnInit();
+        this.user=new User();
       },
       () => {
         console.log("Cancel");
