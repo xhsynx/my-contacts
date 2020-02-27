@@ -1,17 +1,18 @@
-.bg-modal-content-color {
-  background-image: linear-gradient(
-    to bottom,
-    #051937,
-    #3b2158,
-    #7e1163,
-    #bc0050,
-    #e31922
-  );
+@import url("../../../styles.scss");
+.modal-body {
+background-color: var(--body-color-white);
+}
+.modal-footer {
+  background-color: var(--navbar-color);
+}
+.modal-header {
+  background-color: var(--navbar-color);
+}
+.modal-title {
+  color: var(--text-color)
+}
+.icon {
+  color:var(--icon-color);
 }
 
-.bg-modal-footer {
-  background-color: #ec407a;
-}
-.bg-modal-title-color {
-  color: #e31922;
-}
+

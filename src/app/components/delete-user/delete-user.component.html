@@ -1,17 +1,17 @@
 <ng-template #content let-modal>
-  <div class="modal-header" style="background-color: #051937;">
-    <h4 class="modal-title" style="color: #e31922;" id="modal-basic-title">
+  <div class="modal-header">
+    <h4 class="modal-title">
       Delete User!
     </h4>
   </div>
-  <div class="modal-body bg-content">
+  <div class="modal-body">
     <form>
       <div class="form-group">
-        <label style="color:white;">Contact will be deleted...</label>
+        <label>Contact will be deleted...</label>
       </div>
     </form>
   </div>
-  <div class="modal-footer" style="background-color: #ec407a;">
+  <div class="modal-footer">
     <button
       type="button"
       class="btn btn-light"
@@ -36,5 +36,5 @@
   data-placement="right"
   title="Delete"
 >
-  <fa-icon [icon]="faTrash" size="sm" style="color:#e31922;"></fa-icon>
+  <fa-icon [icon]="faTrash" size="sm" class="icon"></fa-icon>
 </button>

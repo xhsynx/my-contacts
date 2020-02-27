@@ -19,6 +19,13 @@ export class NavbarComponent implements OnInit {
       this.users = users;
     });
   }
+  isNewUser(isNewUser:boolean){
+  if(isNewUser){
+    this.firebaseService.get().subscribe(users => {
+      this.users = users;
+    });
+  }
+  }
 }
 
 

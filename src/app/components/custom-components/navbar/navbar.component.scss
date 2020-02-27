@@ -1,10 +1,20 @@
+@import url("../../../../styles.scss");
 .bg-nav {
-  background-color: #051937;
+  background-color:var(--navbar-color);
 }
 .bg-tab {
-  background-color: #051937;
+  background-color:var(--navbar-color);
 }
 .bg-li {
-  background-color: #051937;
+  background-color:var(--usercomponent-color);
+}
+.text{
+  color: var(--text-color);
+}
+.icon{
+  color: var(--icon-color);
+}
+.search{
+  background-color: var(--search-color);
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input,Output,EventEmitter } from "@angular/core";
 import { User } from "src/app/model/user";
 import { UsersService } from "src/app/services/users.service";
 import {
@@ -26,4 +26,8 @@ export class UserComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  userUpdated(user:User){
+    user.avatar=this.user.avatar;
+   this.user=user;
+  }
 }

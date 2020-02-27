@@ -1,11 +1,10 @@
 <ng-template #content let-modal>
-  <div class="modal-header rounded-0" style="background-color: #051937;">
+  <div class="modal-header bg-modal-header rounded-0">
     <h4 class="modal-title bg-modal-title-color" id="modal-basic-title">
       <fa-icon
         [icon]="faUserPlus"
         size="2x"
-        style="color:#e31922;"
-        class="p-0"
+        class="p-0 icon"
       ></fa-icon>
       Add New Contact!
     </h4>
@@ -59,10 +58,10 @@
 <button
   (click)="open(content)"
   type="button"
-  class="btn btn-outline-success"
+  class="btn btn-outline-primary rounded-circle"
   data-toggle="tooltip"
   data-placement="right"
   title="Add New User"
 >
-  <fa-icon [icon]="faUserPlus" size="2x" style="color:#e31922;"></fa-icon>
+  <fa-icon [icon]="faUserPlus" size="2x" class="icon"></fa-icon>
 </button>

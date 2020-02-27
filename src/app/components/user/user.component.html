@@ -11,33 +11,30 @@
       <fa-icon
         [icon]="faUser"
         size="sm"
-        style="color:#e31922;"
-        class="p-2"
+        class="p-2 icon"
       ></fa-icon>
-      <label class="name lead " style="color:#e31922;">{{ user.name }}</label>
+      <label class="name lead text">{{ user.name }}</label>
       <br />
       <fa-icon
         [icon]="faPhoneAlt"
         size="sm"
-        style="color:#e31922;"
-        class="p-2"
+        class="p-2 icon"
       ></fa-icon>
-      <span class=" small" style="color:#e31922;">{{ user.phone }}</span>
+      <span class=" small text" >{{ user.phone }}</span>
       <br />
       <fa-icon
         [icon]="faEnvelope"
         size="sm"
-        style="color:#e31922;"
-        class="p-2"
+        class="p-2 icon"
       ></fa-icon>
-      <span class=" small text-truncate" style="color:#e31922;">{{
+      <span class=" small text">{{
         user.email
       }}</span>
     </div>
   </div>
   <div class="col-3 d-flex justify-content-end align-items-center">
     <div>
-      <app-update-user [user]="user"></app-update-user>
+      <app-update-user [user]="user" (updatedUserChanged)="userUpdated($event)"></app-update-user>
       <app-delete-user [user]="user"></app-delete-user>
     </div>
   </div>

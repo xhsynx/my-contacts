@@ -1,22 +1,20 @@
 <div >
   <nav class="navbar fixed-top bg-nav p-2">
-    <a style="color:#e31922;">
+    <a class="text">
       <fa-icon
         [icon]="faMobileAlt"
         size="2x"
-        style="color:#e31922;"
-        class="p-2"
+        class="p-2 icon"
       ></fa-icon>
-      <span style="font-weight:bold;font-size: x-large;">S</span><i>mart</i>
+      <span style="font-weight:bold;font-size: x-large;" class="text">S</span><i  class="text">mart</i>
       <span style="font-weight:bold;font-size: x-large;padding-left: 5px;"
-        >C</span
-      ><i>ontact</i>
+      class="text">C</span
+      ><i  class="text">ontact</i>
     </a>
 
     <div class="form-inline">
       <input
-        style="background-color:#f48fb1;"
-        class="form-control mr-sm-2"
+        class="form-control search mr-sm-2 "
         type="search"
         placeholder="Search"
         aria-label="Search"
@@ -37,6 +35,6 @@
   <nav
     class="navbar fixed-bottom bg-tab d-flex justify-content-center align-items-center"
   >
-    <app-add-user></app-add-user>
+    <app-add-user (isNewUser)="isNewUser($event)"></app-add-user>
   </nav>
 </div>

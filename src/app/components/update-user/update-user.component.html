@@ -1,16 +1,15 @@
 <ng-template #content let-modal>
-  <div class="modal-header rounded-0" style="background-color: #051937;">
-    <h4 class="modal-title bg-modal-title-color" id="modal-basic-title">
+  <div class="modal-header">
+    <h4 class="modal-title">
       <fa-icon
         [icon]="faUser"
         size="2x"
-        style="color:#e31922;"
-        class="p-2"
+        class="p-2 icon"
       ></fa-icon>
       Update User!
     </h4>
   </div>
-  <div class="modal-body bg-modal-content-color">
+  <div class="modal-body">
     <div class="form-group">
       <div class="input-group p-1">
         <input
@@ -30,7 +29,7 @@
       </div>
       <div class="input-group p-1">
         <input
-          id="phone"
+          id="email"
           class="form-control"
           [(ngModel)]="updatedUser.email"
           placeholder="{{ user.email }}"
@@ -38,7 +37,7 @@
       </div>
     </div>
   </div>
-  <div class="modal-footer bg-modal-footer">
+  <div class="modal-footer">
     <button
       type="button"
       class="btn btn-light"
@@ -64,5 +63,5 @@
   data-placement="right"
   title="Update User"
 >
-  <fa-icon [icon]="faPen" size="sm" style="color:#e31922;"></fa-icon>
+  <fa-icon [icon]="faPen" size="sm" class="icon"></fa-icon>
 </button>

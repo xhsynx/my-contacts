@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import {
   faUser,
@@ -23,22 +23,25 @@ export class AddUserComponent implements OnInit {
   faMapMarkerAlt = faMapMarkerAlt;
   faPhoneAlt = faPhoneAlt;
   faEnvelope = faEnvelope;
+  @Output() isNewUser: EventEmitter<boolean> =   new EventEmitter();
   constructor(
     private modalService: NgbModal,
     private firebaseService: FirebaseService
   ) {}
 
-  ngOnInit(): void {
-    this.firebaseService.get();
-  }
+  ngOnInit(): void {}
 
   open(content: any) {
     this.modalService.open(content).result.then(
       () => {
+     
         this.user.avatar =
           "https://robohash.org/autaperiamest.png?size=100x100&set=set1";
-        this.firebaseService.add(this.user);
-        this.ngOnInit();
+         
+        this.firebaseService.add(this.user).then(()=>{
+          this.isNewUser.emit(true);
+        });
+        
         this.user=new User();
       },
       () => {

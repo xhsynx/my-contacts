@@ -30,7 +30,6 @@ export class FirebaseService {
         this.users.splice(0,this.users.length)
       }
     });
-    console.log(this.users)
     return of(this.users);
   }
   async add(user: User) {
@@ -61,18 +60,17 @@ export class FirebaseService {
       }
     });
   }
-  update(prevUser: User, updatedUser:User) {
+  update(updatedUser:User) {
     var ref = this.firebase.database.ref("/root/");
   ref
     .child("contacts")
     .orderByChild("id")
-    .equalTo(prevUser.id)
+    .equalTo(updatedUser.id)
     .once("value",(snapshot)=>{
-     
       if( snapshot.val() !==undefined){
         ref.child("/contacts/" + Object.keys(snapshot.val())[0]).update({
-          id:prevUser.id,
-          avatar:prevUser.avatar,
+          id:updatedUser.id,
+          avatar:updatedUser.avatar,
           name:updatedUser.name,
           phone:updatedUser.phone,
           email:updatedUser.email

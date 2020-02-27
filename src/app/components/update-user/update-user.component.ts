@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
+import { Component, OnInit, Input, EventEmitter, Output   } from "@angular/core";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import {
   faShareAlt,
   faTrash,
@@ -29,17 +29,19 @@ export class UpdateUserComponent implements OnInit {
   faPhoneAlt = faPhoneAlt;
   faEnvelope = faEnvelope;
   @Input() user: User;
+  @Output() updatedUserChanged: EventEmitter<User> =   new EventEmitter();
   constructor(private modalService: NgbModal, private firebaseService:FirebaseService) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
   open(content: any) {
     this.modalService
       .open(content, { ariaLabelledBy: "modal-basic-title" })
       .result.then(() => {
-       this.firebaseService.update(this.user,this.updatedUser);
-
+     
+        this.updatedUser.id=this.user.id;
+        this.updatedUser.avatar=this.user.avatar;
+       this.firebaseService.update(this.updatedUser);
+       this.updatedUserChanged.emit(this.updatedUser);
         },
         () => {
          console.log("Update cancelled.")
