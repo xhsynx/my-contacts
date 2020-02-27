@@ -18,6 +18,7 @@ import { FilterPipe } from "./pipes/filter.pipe";
 import { AngularFireModule } from "@angular/fire";
 import { environment } from "../environments/environment";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { NumbersOnlyDirective } from './directives/numbers-only.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { AngularFireDatabaseModule } from "@angular/fire/database";
     DeleteUserComponent,
     AddUserComponent,
     ShareUserComponent,
-    FilterPipe
+    FilterPipe,
+    NumbersOnlyDirective
   ],
   imports: [
     BrowserModule,
